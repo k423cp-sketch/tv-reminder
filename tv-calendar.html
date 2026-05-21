@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>追剧日历</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#00B4A0;--pink:#FF6B8A;--dark:#2C2826;--bg:#F5F0EB;--white:#FFF;--sans:'Noto Sans SC','PingFang SC',sans-serif}
+body{font-family:var(--sans);background:var(--bg);color:var(--dark);padding:40px 20px;max-width:800px;margin:0 auto}
+h1{font-size:28px;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+h1 span{color:var(--teal)}
+.sub{color:#888;font-size:14px;margin-bottom:30px}
+.week-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.day-card{border-radius:16px;padding:20px;background:var(--white);box-shadow:0 2px 12px rgba(44,40,38,.06)}
+.day-name{font-size:15px;font-weight:700;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.day-name::after{content:'';flex:1;height:1px;background:var(--bg)}
+.show-item{padding:10px 0;border-bottom:1px solid var(--bg);font-size:14px}
+.show-item:last-child{border-bottom:none}
+.show-title{font-weight:600}
+.show-time{font-size:12px;color:#999;margin-top:2px}
+.empty{color:#ccc;font-size:13px;font-style:italic}
+.edit-hint{margin-top:30px;padding:16px;border-radius:12px;background:rgba(0,180,160,.08);font-size:13px;color:#666;line-height:1.8}
+.edit-hint code{background:var(--bg);padding:2px 8px;border-radius:4px;font-size:12px;color:var(--teal)}
+.footer{text-align:center;margin-top:30px;font-size:12px;color:#ccc}
+</style>
+</head>
+<body>
+
+<h1>📺 <span>追剧</span>日历</h1>
+<div class="sub">编辑此页修改你的追剧时间表</div>
+
+<div class="week-grid" id="grid"></div>
+
+<div class="edit-hint">
+  💡 用文本编辑器打开 <code>tv-calendar.html</code>，找到 <code>SCHEDULE</code> 部分就可以修改剧名和时间。<br>
+  每周自动重复，不用重新设置。
+</div>
+<div class="footer">康传平 · 追剧日历</div>
+
+<script>
+// ═══════ 在这里修改你的追剧时间表 ═══════
+const SCHEDULE = {
+  // 格式: 星期: [ { name: '剧名', time: '更新时间', note: '备注(可选)' } ]
+  '周一': [
+    { name: '尖帽子的魔法工坊', time: '23:00', note: 'Netflix/日漫' },
+  ],
+  '周二': [
+    { name: '百炼成神3', time: '10:00', note: '腾讯视频' },
+  ],
+  '周三': [],
+  '周四': [
+    { name: '将夜', time: '11:00', note: 'B站' },
+    { name: '星辰变第七季', time: '10:00', note: '腾讯视频' },
+    { name: '石纪元第四季', time: '22:00', note: 'B站/日漫' },
+  ],
+  '周五': [
+    { name: '斗破苍穹', time: '10:00', note: '腾讯视频' },
+    { name: '一人之下', time: '10:00', note: '腾讯视频' },
+    { name: '沧元图第二季', time: '10:00', note: '腾讯/优酷' },
+    { name: '大主宰', time: '09:00', note: '爱奇艺' },
+  ],
+  '周六': [
+    { name: '斗罗大陆', time: '10:00', note: '腾讯视频' },
+    { name: '光阴之外', time: '18:00', note: '优酷SVIP' },
+    { name: '择天记', time: '09:00', note: '爱奇艺' },
+  ],
+  '周日': [
+    { name: '成何体统2', time: '09:00', note: '爱奇艺' },
+    { name: '钻石王牌第四季', time: '16:30', note: '日漫' },
+    { name: '仙逆', time: '18:00', note: '腾讯SVIP' },
+    { name: '牧神记', time: '11:00', note: 'B站' },
+    { name: '春夏秋冬代行者', time: '00:30', note: 'B站/日漫' },
+  ],
+};
+// ═══════ 修改结束 ═══════
+
+const days = ['周一','周二','周三','周四','周五','周六','周日'];
+const grid = document.getElementById('grid');
+
+days.forEach(day => {
+  const shows = SCHEDULE[day] || [];
+  const card = document.createElement('div');
+  card.className = 'day-card';
+  card.innerHTML = `
+    <div class="day-name">${day}</div>
+    ${shows.length ? shows.map(s => `
+      <div class="show-item">
+        <div class="show-title">${s.name}</div>
+        <div class="show-time">${s.time || ''}${s.time && s.note ? ' · ' : ''}${s.note || ''}</div>
+      </div>
+    `).join('') : '<div class="empty">暂无</div>'}
+  `;
+  grid.appendChild(card);
+});
+</script>
+
+</body>
+</html>

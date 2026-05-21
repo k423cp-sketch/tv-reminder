@@ -1,0 +1,16 @@
+name: 📺 每日追剧提醒
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 发送微信推送
+        env:
+          SENDKEY: ${{ secrets.SENDKEY }}
+        run: node .github/workflows/push.js
