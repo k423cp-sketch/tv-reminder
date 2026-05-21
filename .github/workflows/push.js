@@ -27,10 +27,6 @@ function getBJ() {
   return new Date(d.getTime() + 8 * 3600000);
 }
 
-function pickRecommend(dayIdx) {
-  return RECOMMENDS[dayIdx % RECOMMENDS.length];
-}
-
 async function main() {
   const now = getBJ();
   const todayKey = DAY_CN[now.getUTCDay()];
@@ -52,7 +48,8 @@ async function main() {
   }
 
   // 推荐一栏
-  desp += `\n---\n📌 **推荐补番**: ${pickRecommend(dayIdx)}\n`;
+  desp += `\n---\n📌 **推荐补番**\n`;
+  for (const r of RECOMMENDS) desp += `- ${r}\n`;
   desp += '\n> 🎬 前往 [追剧日历](https://k423cp-sketch.github.io/tv-reminder/tv-calendar.html) 查看完整一周';
 
   const sendkey = process.env.SENDKEY;
