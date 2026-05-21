@@ -1,4 +1,4 @@
-// 📺 每日追剧提醒 — Server酱推送
+// 📺 每日追剧提醒 — PushPlus推送
 const SCHEDULE = {
   Monday:    [ { name:'尖帽子的魔法工坊', time:'23:00', note:'Netflix/日漫' } ],
   Tuesday:   [ { name:'百炼成神3', time:'10:00', note:'腾讯视频' } ],
@@ -52,16 +52,16 @@ async function main() {
   for (const r of RECOMMENDS) desp += `- ${r}\n`;
   desp += '\n> 🎬 前往 [追剧日历](https://k423cp-sketch.github.io/tv-reminder/tv-calendar.html) 查看完整一周';
 
-  const sendkey = process.env.SENDKEY;
-  if (!sendkey) { console.error('❌ 未设置 SENDKEY'); process.exit(1); }
+  const token = process.env.PUSHPLUS_TOKEN;
+  if (!token) { console.error('❌ 未设置 PUSHPLUS_TOKEN'); process.exit(1); }
 
-  const r = await fetch(`https://sctapi.ftqq.com/${sendkey}.send`, {
+  const r = await fetch('https://www.pushplus.plus/send', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ title, desp }),
+    body: JSON.stringify({ token, title, content: desp, template: 'markdown' }),
   });
   const result = await r.json();
-  if (result.code === 0) {
+  if (result.code === 200) {
     console.log(`✅ 推送成功: ${title}`);
     console.log(`📌 推荐列表: ${RECOMMENDS.join(', ')}`);
   } else {
