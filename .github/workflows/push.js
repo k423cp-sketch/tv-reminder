@@ -63,7 +63,7 @@ async function main() {
   const result = await r.json();
   if (result.code === 0) {
     console.log(`✅ 推送成功: ${title}`);
-    console.log(`📌 今日推荐: ${pickRecommend(dayIdx)}`);
+    console.log(`📌 推荐列表: ${RECOMMENDS.join(', ')}`);
   } else {
     console.error('❌ 推送失败:', JSON.stringify(result));
     process.exit(1);
