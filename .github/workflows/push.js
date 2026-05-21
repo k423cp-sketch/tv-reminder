@@ -16,6 +16,7 @@ const RECOMMENDS = [
   '动物狂想曲（最终季）',
   '盾之勇者成名录',
   '金牌得主',
+  '状态异常',
 ];
 
 const DAY_CN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
