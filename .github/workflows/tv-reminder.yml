@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v5
       - name: 发送微信推送
         env:
-          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          SENDKEY: ${{ secrets.SENDKEY }}
         run: node .github/workflows/push.js
