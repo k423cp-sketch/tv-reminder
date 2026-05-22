@@ -2,7 +2,7 @@ name: 📺 每日追剧提醒
 
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 18 * * *'
   workflow_dispatch:
 
 jobs:
