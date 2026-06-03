@@ -2,8 +2,14 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,viewport-fit=cover">
 <title>追剧日历</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="追剧日历">
+<meta name="theme-color" content="#00B4A0">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--teal:#00B4A0;--pink:#FF6B8A;--dark:#2C2826;--bg:#F5F0EB;--white:#FFF;--sans:'Noto Sans SC','PingFang SC',sans-serif}
@@ -97,5 +103,11 @@ days.forEach(day => {
 });
 </script>
 
+<script>
+// 注册 Service Worker
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
 </body>
 </html>
