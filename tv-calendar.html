@@ -42,7 +42,10 @@ h1 span{color:var(--teal)}
   💡 用文本编辑器打开 <code>tv-calendar.html</code>，找到 <code>SCHEDULE</code> 部分就可以修改剧名和时间。<br>
   每周自动重复，不用重新设置。
 </div>
-<div class="footer">康传平 · 追剧日历</div>
+<div class="footer">
+  <span>Kcp · 追剧日历</span>
+  <button id="installBtn" style="display:none" onclick="installApp()">📲 安装到桌面</button>
+</div>
 
 <script>
 // ═══════ 在这里修改你的追剧时间表 ═══════
@@ -107,6 +110,17 @@ days.forEach(day => {
 // 注册 Service Worker
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('./sw.js');
+}
+// PWA 安装
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',function(e){
+  e.preventDefault();
+  deferredPrompt=e;
+  document.getElementById('installBtn').style.display='inline-block';
+});
+function installApp(){
+  if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(function(r){if(r.outcome==='accepted')document.getElementById('installBtn').style.display='none'});deferredPrompt=null}
+  else alert('请用 Chrome 浏览器打开，点右上角 ⋮ → 安装应用');
 }
 </script>
 </body>
