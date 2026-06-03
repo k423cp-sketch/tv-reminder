@@ -5,7 +5,7 @@ const SCHEDULE = {
   Wednesday: [],
   Thursday:  [ { name:'将夜', time:'11:00', note:'B站' }, { name:'星辰变第七季', time:'10:00', note:'腾讯视频' }, { name:'石纪元第四季', time:'22:00', note:'B站/日漫' } ],
   Friday:    [ { name:'斗破苍穹', time:'10:00', note:'腾讯视频' }, { name:'一人之下', time:'10:00', note:'腾讯视频' }, { name:'沧元图第二季', time:'10:00', note:'腾讯/优酷' }, { name:'大主宰', time:'09:00', note:'爱奇艺' }, { name:'转生史莱姆第四季', time:'22:00', note:'B站/日漫' } ],
-  Saturday:  [ { name:'斗罗大陆', time:'10:00', note:'腾讯视频' }, { name:'光阴之外', time:'18:00', note:'优酷SVIP' }, { name:'择天记', time:'09:00', note:'爱奇艺' } ],
+  Saturday:  [ { name:'斗罗大陆', time:'10:00', note:'腾讯视频' }, { name:'光阴之外', time:'18:00', note:'优酷SVIP' }, { name:'择天记', time:'09:00', note:'爱奇艺' }, { name:'凡人修仙传', time:'10:00', note:'B站' } ],
   Sunday:    [ { name:'成何体统2', time:'09:00', note:'爱奇艺' }, { name:'钻石王牌第四季', time:'16:30', note:'日漫' }, { name:'仙逆', time:'18:00', note:'腾讯SVIP' }, { name:'牧神记', time:'11:00', note:'B站' }, { name:'春夏秋冬代行者', time:'00:30', note:'B站/日漫' }, { name:'杖与剑的魔剑谭第二季', time:'15:30', note:'B站/日漫' } ],
 };
 
