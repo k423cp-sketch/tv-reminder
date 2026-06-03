@@ -1,6 +1,6 @@
 {
   "name": "追剧日历",
-  "short_name": "追剧",
+  "short_name": "追剧日历",
   "description": "每日追剧提醒与动漫更新时间表",
   "start_url": "./tv-calendar.html",
   "display": "standalone",
