@@ -1,6 +1,6 @@
-// 追剧日历 Service Worker - 离线缓存
-const CACHE = 'tv-calendar-v2';
-const URLS = ['/tv-calendar.html', '/manifest.json', '/icon-192.png'];
+// 追剧日历 Service Worker
+const CACHE = 'tv-cal-v2';
+const URLS = ['./tv-calendar.html', './manifest.json', './icon-192.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(URLS)));
