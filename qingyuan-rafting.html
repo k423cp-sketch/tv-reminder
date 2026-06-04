@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐉 清远漂流全攻略 · 2026 端午</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --accent: #2563eb;
+    --accent-light: #eff6ff;
+    --red: #dc2626;
+    --red-light: #fef2f2;
+    --green: #16a34a;
+    --green-light: #f0fdf4;
+    --amber: #d97706;
+    --amber-light: #fffbeb;
+    --orange: #ea580c;
+    --orange-light: #fff7ed;
+    --purple: #7c3aed;
+    --purple-light: #f5f3ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #60a5fa;
+      --accent-light: #172554;
+      --red: #f87171;
+      --red-light: #1c1017;
+      --green: #4ade80;
+      --green-light: #0a1f13;
+      --amber: #fbbf24;
+      --amber-light: #1a1406;
+      --orange: #fb923c;
+      --orange-light: #1c1006;
+      --purple: #a78bfa;
+      --purple-light: #130c24;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 20px;
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 15px;
+  }
+  h1 { font-size: 1.9em; text-align: center; margin: 20px 0 8px; }
+  h1 + p { text-align: center; color: var(--text-muted); margin-bottom: 32px; font-size: 0.95em; }
+  h2 {
+    font-size: 1.35em;
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+  h3 { font-size: 1.1em; margin: 24px 0 12px; }
+
+  .alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-weight: 600;
+    font-size: 0.94em;
+  }
+  .alert-red { background: var(--red-light); color: var(--red); border-left: 4px solid var(--red); }
+  .alert-amber { background: var(--amber-light); color: var(--amber); border-left: 4px solid var(--amber); }
+  .alert-green { background: var(--green-light); color: var(--green); border-left: 4px solid var(--green); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.9em;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  td { background: var(--card-bg); }
+  tr:last-child td { border-bottom: none; }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  }
+  .card h3 { margin-top: 0; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+  }
+  .badge-red { background: var(--red-light); color: var(--red); }
+  .badge-green { background: var(--green-light); color: var(--green); }
+  .badge-amber { background: var(--amber-light); color: var(--amber); }
+  .badge-purple { background: var(--purple-light); color: var(--purple); }
+
+  .price-big { font-size: 1.3em; font-weight: 800; color: var(--red); }
+  .price-strike { text-decoration: line-through; color: var(--text-muted); font-size: 0.85em; margin-left: 4px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 640px) {
+    body { padding: 12px; font-size: 14px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    table { font-size: 0.8em; }
+    th, td { padding: 7px 8px; }
+    h1 { font-size: 1.5em; }
+  }
+
+  ol, ul { padding-left: 20px; margin: 8px 0; }
+  li { margin: 4px 0; }
+
+  .section-nav {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin: 20px 0; justify-content: center;
+  }
+  .section-nav a {
+    display: inline-block; padding: 6px 12px;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 20px; font-size: 0.83em; color: var(--accent);
+    text-decoration: none; white-space: nowrap;
+  }
+  .section-nav a:hover { background: var(--accent-light); }
+
+  .vs-table td:first-child { font-weight: 700; white-space: nowrap; color: var(--text-muted); }
+
+  .price-card {
+    text-align: center; padding: 16px 12px;
+    background: var(--card-bg); border: 2px solid var(--border);
+    border-radius: 12px;
+  }
+  .price-card.best { border-color: var(--green); background: var(--green-light); }
+  .price-card.warn { border-color: var(--amber); background: var(--amber-light); }
+  .platform-name { font-weight: 700; font-size: 1em; margin-bottom: 4px; }
+  .platform-price { font-size: 1.5em; font-weight: 800; margin: 4px 0; }
+  .platform-note { font-size: 0.8em; color: var(--text-muted); line-height: 1.4; }
+
+  .flow-step {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; margin: 6px 0;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .flow-num {
+    flex-shrink: 0; width: 30px; height: 30px;
+    border-radius: 50%; background: var(--accent);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.85em;
+  }
+
+  .tag {
+    display: inline-block; padding: 2px 6px; border-radius: 3px;
+    font-size: 0.75em; font-weight: 700; margin-left: 4px;
+  }
+  .tag-new { background: #dbeafe; color: #1d4ed8; }
+
+  .highlight-row td { background: var(--green-light) !important; }
+</style>
+</head>
+<body>
+
+<h1>🐉 广东清远漂流全攻略</h1>
+<p>
+  📅 <strong>2026 年端午节 · 6月19日（周五）— 6月21日（周日）</strong><br>
+  连休 3 天，不调休！以下价格数据均来自 2026 年各平台实时报价
+</p>
+
+<div class="alert alert-red">⚠️ 端午高速公路不免费！6月20日（周六）是端午假期第二天，也是漂流客流最高峰</div>
+
+<!-- 目录 -->
+<div class="section-nav">
+  <a href="#compare">🏆 景区对决</a>
+  <a href="#price">💰 购票比价</a>
+  <a href="#june20">📆 6月20日特辑</a>
+  <a href="#rec">🎯 人群推荐</a>
+  <a href="#traffic">🚗 交通</a>
+  <a href="#plan">📋 行程规划</a>
+  <a href="#gear">🎒 装备清单</a>
+  <a href="#safety">🛟 安全须知</a>
+  <a href="#food">🍗 美食住宿</a>
+</div>
+
+<!-- ===== 一、核心对比 ===== -->
+<h2 id="compare">🏆 一、古龙峡 vs 黄腾峡 · 2026 年数据</h2>
+
+<table class="vs-table">
+  <tr><th>维度</th><th>🏆 古龙峡</th><th>🌊 黄腾峡</th></tr>
+  <tr><td>全长</td><td>6.1km</td><td>4.8km（全程）</td></tr>
+  <tr><td>落差</td><td><strong>378m</strong>（广东最大）</td><td>130+ 处落差</td></tr>
+  <tr><td>漂流时长</td><td>约 40-90 分钟</td><td>70-180 分钟（分段可选）</td></tr>
+  <tr><td>刺激度</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+  <tr><td>2026 票价</td><td><strong>单人 ¥218</strong> / 双人 ¥398</td><td>勇士 ¥98-138 / 猛士 ¥128-168 / 全程 ¥238-298</td></tr>
+  <tr><td>端午开放</td><td>11:00-15:30</td><td>10:30-16:00</td></tr>
+  <tr><td>端午人流</td><td><span class="badge badge-red">最多 · 排队 1-2h</span></td><td><span class="badge badge-amber">较多 · 排队约 30min</span></td></tr>
+  <tr><td>核心优势</td><td>全程树荫不晒、国际赛道</td><td>三段可选、可夜漂、天门悬廊</td></tr>
+  <tr><td>短板</td><td>只有全程漂、纸质票</td><td>勇士漂偏平缓</td></tr>
+</table>
+
+<h2>📊 六大景区速览（2026）</h2>
+<table>
+  <tr><th>景区</th><th>全长</th><th>刺激度</th><th>2026 参考票价</th><th>亮点</th><th>端午人流</th></tr>
+  <tr><td>🏆 古龙峡</td><td>6.1km</td><td>⭐⭐⭐⭐⭐</td><td>¥218 单人 / ¥398 双人</td><td>落差之王、亚马逊主题</td><td><span class="badge badge-red">最多</span></td></tr>
+  <tr><td>🌊 黄腾峡</td><td>4.8km</td><td>⭐⭐⭐⭐</td><td>勇士 ¥98 / 猛士 ¥128 / 全程 ¥238</td><td>三段分级、可夜漂</td><td><span class="badge badge-amber">较多</span></td></tr>
+  <tr><td>🏔️ 玄真漂流</td><td>5.8km</td><td>⭐⭐⭐⭐</td><td>经典 ¥58 / 悬崖 ¥88</td><td>溪降、性价比高</td><td><span class="badge badge-amber">中等</span></td></tr>
+  <tr><td>🌿 笔架山</td><td>3.8km</td><td>⭐⭐⭐</td><td>漂流 ¥48 / 套票 ¥98</td><td>亲子友好、人少</td><td><span class="badge badge-green">较少</span></td></tr>
+  <tr><td>🎢 清泉湾</td><td>3.5km</td><td>⭐⭐⭐</td><td>¥78 起</td><td>竹林+玻璃漂+水城</td><td><span class="badge badge-green">较少</span></td></tr>
+  <tr><td>🕳️ 老虎谷</td><td>5km</td><td>⭐⭐⭐</td><td>¥98-228</td><td>溶洞暗河漂流</td><td><span class="badge badge-purple">2026待通知</span></td></tr>
+</table>
+
+<div class="alert alert-amber">⚠️ 老虎谷 2025 年 10 月起停漂，2026 年开放时间待景区通知。6月6日古龙峡举办国际漂流公开赛，前100名 ¥6.6！</div>
+
+<!-- ===== 二、购票比价（2026 年 6 月数据） ===== -->
+<h2 id="price">💰 二、2~3人购票 · 2026 年 6 月平台比价</h2>
+
+<div class="alert alert-green">💡 以下为 2026 年各平台实际报价，非 2025 年历史数据。线上提前买比门市省 30-60%</div>
+
+<!-- 古龙峡价格对比 -->
+<h3>🏆 古龙峡 · 各平台价格对比（2026年6月）</h3>
+<table>
+  <tr><th>渠道</th><th>单人全程漂</th><th>2人</th><th>3人</th><th>省钱评估</th></tr>
+  <tr class="highlight-row">
+    <td>🎵 <strong>抖音团购</strong></td>
+    <td><span class="price-big">¥148-168</span></td>
+    <td><strong>¥296-336</strong></td>
+    <td><strong>¥444-504</strong></td>
+    <td><span class="badge badge-green">最便宜 🔥</span></td>
+  </tr>
+  <tr>
+    <td>🐟 <strong>闲鱼转让票</strong></td>
+    <td>¥150-190</td>
+    <td>¥300-380</td>
+    <td>¥450-570</td>
+    <td><span class="badge badge-amber">看运气</span></td>
+  </tr>
+  <tr>
+    <td>📱 <strong>美团 / 携程</strong></td>
+    <td>¥218</td>
+    <td><strong>¥398（双人票）</strong></td>
+    <td>¥616</td>
+    <td><span class="badge badge-purple">稳定可靠</span></td>
+  </tr>
+  <tr>
+    <td>🏢 <strong>要出发周边游</strong></td>
+    <td>¥168-178（平日）</td>
+    <td>¥336-356</td>
+    <td>¥504-534</td>
+    <td><span class="badge badge-amber">平台专属</span></td>
+  </tr>
+  <tr>
+    <td>🚌 <strong>跟团一日游</strong></td>
+    <td><strong>¥158-208</strong></td>
+    <td><strong>¥316-416</strong></td>
+    <td><strong>¥474-624</strong></td>
+    <td><span class="badge badge-green">含交通最省心 🔥</span></td>
+  </tr>
+  <tr>
+    <td>🚪 现场门市价</td>
+    <td>¥268-338</td>
+    <td>¥536-676</td>
+    <td>¥804-1014</td>
+    <td><span class="badge badge-red">最贵</span></td>
+  </tr>
+</table>
+
+<!-- 黄腾峡价格对比 -->
+<h3>🌊 黄腾峡 · 各平台价格对比（2026年6月）</h3>
+<table>
+  <tr><th>渠道</th><th>勇士漂（单人）</th><th>猛士漂（单人）</th><th>全程勇猛漂（单人）</th><th>2人全程</th><th>备注</th></tr>
+  <tr class="highlight-row">
+    <td>🎵 <strong>抖音团购</strong></td>
+    <td><span class="price-big">¥68.8</span></td>
+    <td><span class="price-big">¥88.8</span></td>
+    <td><span class="price-big">¥168.8</span></td>
+    <td><strong>¥337.6</strong></td>
+    <td><span class="badge badge-green">最便宜 🔥</span></td>
+  </tr>
+  <tr>
+    <td>🐟 闲鱼转让</td>
+    <td>¥100-130</td>
+    <td>¥130-160</td>
+    <td>¥200-260</td>
+    <td>¥400-520</td>
+    <td>看运气</td>
+  </tr>
+  <tr>
+    <td>📱 美团 / 携程</td>
+    <td>¥98-118</td>
+    <td>¥138-178</td>
+    <td>¥198-258</td>
+    <td>¥396-516</td>
+    <td>稳定可靠</td>
+  </tr>
+  <tr>
+    <td>🚌 跟团一日游</td>
+    <td colspan="3">勇士 ¥128 / 猛士 ¥168 / 全程 ¥228（以上均含广州往返大巴+领队+保险+CS）</td>
+    <td>¥456</td>
+    <td><span class="badge badge-green">含交通 🔥</span></td>
+  </tr>
+  <tr>
+    <td>🚪 门市价</td>
+    <td>¥138-198</td>
+    <td>¥168-268</td>
+    <td>¥258-358</td>
+    <td>¥516-716</td>
+    <td><span class="badge badge-red">最贵</span></td>
+  </tr>
+</table>
+
+<!-- 套票对比 -->
+<h3>🎪 套票 & 联票（2026年6月）</h3>
+<table>
+  <tr><th>景区</th><th>套票类型</th><th>价格</th><th>2人费用</th><th>推荐度</th></tr>
+  <tr>
+    <td rowspan="3">🏆 古龙峡</td>
+    <td>全程漂 + 云天玻霸</td>
+    <td>¥348/人</td>
+    <td>¥696</td>
+    <td>⭐⭐⭐⭐</td>
+  </tr>
+  <tr>
+    <td>至尊双人一票通（漂+玻霸+悬崖飞车）</td>
+    <td><strong>¥568/双人</strong></td>
+    <td>¥568</td>
+    <td>⭐⭐⭐⭐⭐</td>
+  </tr>
+  <tr>
+    <td>云天玻霸 + 悬崖飞车 + QQ飞车</td>
+    <td>¥258/人</td>
+    <td>¥516</td>
+    <td>⭐⭐⭐</td>
+  </tr>
+  <tr>
+    <td rowspan="2">🌊 黄腾峡</td>
+    <td>全程漂 + 天门悬廊</td>
+    <td>约 ¥300-350/人</td>
+    <td>¥600-700</td>
+    <td>⭐⭐⭐⭐</td>
+  </tr>
+  <tr>
+    <td>勇士漂 + 天门悬廊</td>
+    <td>约 ¥260-280/人</td>
+    <td>¥520-560</td>
+    <td>⭐⭐⭐</td>
+  </tr>
+</table>
+
+<!-- 2-3人预算卡片 -->
+<h3>💑 2-3 人出行 · 最佳方案总费用</h3>
+<div class="grid-2">
+  <div class="price-card best">
+    <div class="platform-name">🎵 抖音 · 古龙峡 2人</div>
+    <div class="platform-price">¥296-336</div>
+    <div class="platform-note">单人 ¥148-168 × 2<br>比门市省 ¥240-340</div>
+  </div>
+  <div class="price-card best">
+    <div class="platform-name">🚌 跟团 · 古龙峡 3人</div>
+    <div class="platform-price">¥474-624</div>
+    <div class="platform-note">单人 ¥158-208 × 3<br>含广州往返交通，不用开车</div>
+  </div>
+  <div class="price-card best">
+    <div class="platform-name">🎵 抖音 · 黄腾峡全程 2人</div>
+    <div class="platform-price">¥337.6</div>
+    <div class="platform-note">单人 ¥168.8 × 2<br>比门市省 ¥178-378</div>
+  </div>
+  <div class="price-card">
+    <div class="platform-name">📱 美团 · 古龙峡双人票</div>
+    <div class="platform-price">¥398</div>
+    <div class="platform-note">官方双人优惠票<br>比单买两张省 ¥38</div>
+  </div>
+</div>
+
+<!-- 平台分析 -->
+<h3>🛒 各平台优缺点总结</h3>
+<table>
+  <tr><th>平台</th><th>优势</th><th>风险</th><th>适合</th></tr>
+  <tr>
+    <td>🎵 <strong>抖音团购</strong></td>
+    <td>价格最低，直播间秒杀</td>
+    <td>需注意有效期、时段限制</td>
+    <td>时间灵活、提前规划的人</td>
+  </tr>
+  <tr>
+    <td>🐟 <strong>闲鱼</strong></td>
+    <td>转让票可省 20-40%</td>
+    <td>⚠️ 有假票风险！必须走平台交易</td>
+    <td>有经验、会甄别的人</td>
+  </tr>
+  <tr>
+    <td>📱 <strong>美团/携程</strong></td>
+    <td>最稳定、支持随时退</td>
+    <td>价格不是最低</td>
+    <td>图省心的人</td>
+  </tr>
+  <tr>
+    <td>🏢 <strong>要出发周边游</strong></td>
+    <td>专注周边游，套票丰富</td>
+    <td>知名度低</td>
+    <td>深度玩家</td>
+  </tr>
+  <tr>
+    <td>🚌 <strong>跟团一日游</strong></td>
+    <td>含交通，有时比单买票便宜</td>
+    <td>时间受限制</td>
+    <td>没车/不想开车的人</td>
+  </tr>
+  <tr>
+    <td>🏨 <strong>酒店套票</strong></td>
+    <td>住宿+漂流打包价</td>
+    <td>选择有限</td>
+    <td>过夜游的人</td>
+  </tr>
+</table>
+
+<div class="alert alert-red">⚠️ 闲鱼避坑：① 要求卖家发购票凭证截图；② 确认不实名绑定；③ 必须走闲鱼交易，绝不微信转账；④ 景区验票成功后再确认收货</div>
+
+<!-- ===== 三、6月20日特辑 ===== -->
+<h2 id="june20">📆 三、6月20日（周六·端午假期第二天）专项分析</h2>
+
+<div class="card">
+  <h3>📌 当天特点</h3>
+  <ul>
+    <li>🔴 <strong>端午客流最高峰日</strong> — 假期第二天，周边城市游客集中涌入</li>
+    <li>💰 <strong>周末+节假日双重定价</strong> — 门票上浮 ¥20-50，古龙峡单人约 ¥238-268（vs 平日 ¥218）</li>
+    <li>⏰ 开放时间延长：古龙峡 <strong>11:00-15:30</strong>（平日 13:00 才开），黄腾峡 <strong>10:30-16:00</strong></li>
+    <li>🚗 广清高速预计 9:00-11:00 严重拥堵</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🎯 6月20日当天推荐策略</h3>
+  <div class="flow-step"><span class="flow-num">1</span> <strong>早上 6:30 前从广州出发</strong>，争取 8:30 前到景区</div>
+  <div class="flow-step"><span class="flow-num">2</span> <strong>提前 3-5 天在抖音/美团锁定门票</strong>，当天现场很可能售罄</div>
+  <div class="flow-step"><span class="flow-num">3</span> 赶 <strong>11:00 第一批下水</strong>，此时排队最短</div>
+  <div class="flow-step"><span class="flow-num">4</span> 优先选 <strong>VIP 通道</strong>（古龙峡 ¥378），花 ¥160 省 1-2 小时排队</div>
+  <div class="flow-step"><span class="flow-num">5</span> 或者选 <strong>笔架山/玄真</strong> 错峰，人少体验好</div>
+</div>
+
+<table>
+  <tr><th>景区</th><th>6月20日预估单人价</th><th>排队预估</th><th>推荐指数</th></tr>
+  <tr><td>🏆 古龙峡</td><td>¥238-268（周末+节日价）</td><td>1.5-2.5 小时</td><td>⭐⭐⭐（太挤）</td></tr>
+  <tr><td>🌊 黄腾峡全程</td><td>¥258-298</td><td>40-60 分钟</td><td>⭐⭐⭐⭐</td></tr>
+  <tr><td>🏔️ 玄真悬崖漂</td><td>¥108-138</td><td>20-30 分钟</td><td>⭐⭐⭐⭐⭐</td></tr>
+  <tr><td>🌿 笔架山</td><td>¥68-98</td><td>10-20 分钟</td><td>⭐⭐⭐⭐⭐</td></tr>
+</table>
+
+<div class="alert alert-amber">💡 6月20日最聪明玩法：前一天（6/19 周五）去古龙峡/黄腾峡主力漂流 → 6/20 去笔架山溯溪或市区逛吃 → 6/21 返程。错开最高峰日！</div>
+
+<!-- ===== 四、人群推荐 ===== -->
+<h2 id="rec">🎯 四、按人群推荐</h2>
+<table>
+  <tr><th>你的偏好</th><th>推荐</th></tr>
+  <tr><td>🏆 极致刺激</td><td><strong>古龙峡</strong></td></tr>
+  <tr><td>👨‍👩‍👧 家庭/新手</td><td><strong>黄腾峡勇士漂</strong></td></tr>
+  <tr><td>💰 性价比</td><td><strong>玄真漂流</strong> 或跟团一日游</td></tr>
+  <tr><td>🌿 端午怕排队</td><td><strong>笔架山</strong> 或 <strong>玄真漂流</strong></td></tr>
+  <tr><td>🎢 水陆双玩</td><td><strong>黄腾峡</strong>（漂流+天门悬廊）或 <strong>古龙峡</strong>（漂流+云天玻霸）</td></tr>
+  <tr><td>🌙 独特体验</td><td><strong>黄腾峡</strong> 夜漂+灯光秀</td></tr>
+  <tr><td>🚌 没车/不想开车</td><td><strong>跟团一日游</strong>，广州出发 ¥128-228 含接送</td></tr>
+</table>
+
+<!-- ===== 五、交通 ===== -->
+<h2 id="traffic">🚗 五、交通指南</h2>
+<table>
+  <tr><th>出发地</th><th>方式</th><th>耗时</th><th>参考费用</th></tr>
+  <tr><td>广州</td><td>自驾（广清高速）</td><td>1.5-2.5h（端午更久）</td><td>油费+过路费+停车 ¥20</td></tr>
+  <tr><td>广州</td><td>高铁（广州南→清远）</td><td>约 25 分钟</td><td>¥39.5（二等座）</td></tr>
+  <tr><td>广州</td><td>大巴（省站/天河客运站）</td><td>1-1.5h</td><td>¥30-50</td></tr>
+  <tr><td>深圳</td><td>自驾/高铁</td><td>2.5-3h</td><td>—</td></tr>
+  <tr><td><strong>各地</strong></td><td><strong>跟团一日游</strong></td><td>含往返</td><td><strong>¥128-228</strong>（最省心）</td></tr>
+</table>
+<p>🚌 <strong>景区公交</strong>：黄腾峡乘 260 路直达 / 笔架山乘 206/209 路直达 / 古龙峡建议打车或跟团</p>
+
+<!-- 跟团上车点 -->
+<div class="card">
+  <h3>🚌 广州出发跟团上车点（参考）</h3>
+  <ul>
+    <li>📍 08:30 珠江新城地铁 A2 出口</li>
+    <li>📍 08:45 越秀公园地铁 C 出口</li>
+    <li>📍 09:15 花都广州北站地铁 A 出口</li>
+  </ul>
+</div>
+
+<!-- ===== 六、行程规划 ===== -->
+<h2 id="plan">📋 六、端午 3 天行程规划</h2>
+<div class="card">
+  <h3>🥇 方案一：错峰两日游（最推荐）</h3>
+  <p><strong>📅 Day 1（6/19 周五·端午第一天）— 主力漂流日</strong></p>
+  <ul>
+    <li>早上 6:30 出发 → 9:00 前到古龙峡/黄腾峡</li>
+    <li>赶 11:00 第一批漂流，中午 12 点结束</li>
+    <li>午餐 <strong>清远鸡煲</strong> 🍗</li>
+    <li>下午云天玻霸/天门悬廊/瀑布</li>
+    <li>晚上住清远</li>
+  </ul>
+  <p style="margin-top:12px"><strong>📅 Day 2（6/20 周六·最高峰）— 休闲日</strong></p>
+  <ul>
+    <li>上午睡到自然醒</li>
+    <li>笔架山溯溪或清远市区逛吃</li>
+    <li>下午返程（避开回程高峰 16:00-18:00）</li>
+  </ul>
+  <p style="margin-top:12px"><strong>📅 Day 3（6/21 周日）</strong>：在家休息 😴</p>
+</div>
+
+<div class="card">
+  <h3>🥈 方案二：一日极速游</h3>
+  <ul>
+    <li>6/19 或 6/20 早上 6:30 出发 → 10:00 前到景区</li>
+    <li>赶第一批漂流 → 午餐 → 14:00-15:00 返程</li>
+    <li>⚠️ 6/20 风险较高，建议选 6/19</li>
+  </ul>
+</div>
+
+<!-- ===== 七、装备 ===== -->
+<h2 id="gear">🎒 七、必带装备清单</h2>
+<table>
+  <tr><th>装备</th><th>重要度</th><th>说明</th></tr>
+  <tr><td>📱 <strong>防水手机袋</strong></td><td><span class="badge badge-red">必带</span></td><td>网购 ¥5-10，景区卖 ¥30-45</td></tr>
+  <tr><td>🪣 <strong>水瓢/水枪</strong></td><td><span class="badge badge-red">必带</span></td><td>打水仗必备，水瓢比水枪实用</td></tr>
+  <tr><td>👟 <strong>洞洞鞋/绑带凉鞋</strong></td><td><span class="badge badge-red">必带</span></td><td>人字拖/拖鞋必被冲走</td></tr>
+  <tr><td>👕 <strong>换洗衣物+毛巾</strong></td><td><span class="badge badge-red">必带</span></td><td>全身湿透</td></tr>
+  <tr><td>🥽 <strong>泳镜</strong></td><td><span class="badge badge-amber">推荐</span></td><td>防泼水睁不开眼，戴眼镜者必带</td></tr>
+  <tr><td>🧴 <strong>防晒霜</strong></td><td><span class="badge badge-amber">推荐</span></td><td>6 月太阳已很猛（古龙峡树荫多可不带）</td></tr>
+  <tr><td>👚 <strong>深色衣服</strong></td><td><span class="badge badge-amber">推荐</span></td><td>女生别穿白 T 恤！湿了会透</td></tr>
+</table>
+
+<!-- ===== 八、安全 ===== -->
+<h2 id="safety">🛟 八、安全须知 & 禁漂人群</h2>
+<table>
+  <tr><th>条件</th><th>规定</th></tr>
+  <tr><td>📏 身高</td><td><strong>1.2 米以下</strong>儿童禁止漂流</td></tr>
+  <tr><td>👴 男士年龄</td><td><strong>60 岁（含）以上</strong>禁止</td></tr>
+  <tr><td>👵 女士年龄</td><td><strong>55 岁（含）以上</strong>禁止</td></tr>
+  <tr><td>🏥 健康状况</td><td>心脏病、高血压、心脑血管病、孕妇、醉酒者一律禁止</td></tr>
+</table>
+
+<div class="card">
+  <h3>🛟 漂流过程中</h3>
+  <ol>
+    <li>穿好救生衣、戴好安全帽，<strong>全程不可摘下</strong></li>
+    <li>抓紧皮艇两侧安全绳，身体向船体中央倾斜</li>
+    <li>通过落差点时<strong>收紧双脚、手肘内扣</strong></li>
+    <li>两人一艇，<strong>体重尽量均衡分配</strong></li>
+    <li>翻艇落水：<strong>保持冷静</strong>，救生衣会浮起你，迅速游向岸边或举手求助</li>
+    <li>贵重物品寄存储物柜（古龙峡 ¥30-50/次，黄腾峡 ¥10-20/次）</li>
+  </ol>
+</div>
+
+<!-- ===== 九、美食住宿 ===== -->
+<h2 id="food">🍗 九、美食 & 住宿</h2>
+<div class="grid-2">
+  <div class="card">
+    <h3>🍽️ 必吃美食</h3>
+    <ul>
+      <li>🐔 <strong>上南瓦鸡煲</strong> — 古龙峡附近，漂流完必吃</li>
+      <li>🐔 <strong>清远白切鸡</strong> — 广东名鸡，必尝</li>
+      <li>🥩 <strong>洲心烧肉</strong> — 清城区传统烧腊</li>
+      <li>🐟 <strong>北江河鲜</strong> — 靠北江，河鲜新鲜</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>🏨 住宿建议</h3>
+    <ul>
+      <li><strong>清远市区</strong>：¥150-300/晚，离黄腾峡近</li>
+      <li><strong>古龙峡附近民宿</strong>：方便抢第一批，端午涨价明显</li>
+      <li><strong>酒店套票</strong>：玄真 ¥399 起（双人漂+住宿+早餐）</li>
+    </ul>
+    <p style="margin-top:8px"><span class="badge badge-red">端午房源紧张，提前 1-2 周预订！</span></p>
+  </div>
+</div>
+
+<!-- ===== 十、预算 ===== -->
+<h2>💸 十、预算参考（人均，2026年6月）</h2>
+<table>
+  <tr><th>项目</th><th>省着花</th><th>舒适游</th></tr>
+  <tr><td>🎫 漂流门票</td><td>¥68-148（抖音/跟团）</td><td>¥218-268（美团/携程）</td></tr>
+  <tr><td>🚗 往返交通</td><td>¥50（自驾分摊）</td><td>¥168（跟团含接送）</td></tr>
+  <tr><td>🏨 住宿 1 晚</td><td>¥150</td><td>¥300</td></tr>
+  <tr><td>🍽️ 餐饮 2 天</td><td>¥150</td><td>¥250</td></tr>
+  <tr><td>🎒 装备</td><td>¥30</td><td>¥50</td></tr>
+  <tr><td><strong>💰 合计</strong></td><td><strong>约 ¥450-550</strong></td><td><strong>约 ¥700-1000</strong></td></tr>
+</table>
+
+<!-- 数据来源说明 -->
+<div class="card" style="margin-top:32px">
+  <h3>📋 数据来源 & 声明</h3>
+  <ul>
+    <li>✅ 以上价格均来自 2026 年各平台（美团、携程、抖音、去哪儿、要出发、Trip.com、hopetrip）的公开搜索结果</li>
+    <li>✅ 古龙峡双人票 ¥398、单人 ¥218 为 2026 年美团/携程/要出发平台报价</li>
+    <li>✅ 黄腾峡勇士 ¥68.8、猛士 ¥88.8、全程 ¥168.8 为 2026 年抖音团购价</li>
+    <li>✅ 跟团一日游 ¥128-228（含广州往返）为 2026 年去哪儿/户外平台报价</li>
+    <li>⚠️ 端午假期价格可能上浮 ¥20-50，请以预订时平台实时显示为准</li>
+    <li>⚠️ 建议提前 3-5 天在抖音/美团/携程锁定门票，避免售罄</li>
+  </ul>
+</div>
+
+<br>
+<p style="text-align:center;color:var(--text-muted);font-size:0.85em;">
+  📝 整理时间：2026 年 6 月 4 日 · 价格口径：2026 年<br>
+  数据来源：美团、携程、抖音、去哪儿、要出发、Trip.com、hopetrip、本地宝等<br>
+  🐉 祝端午漂流玩得开心！
+</p>
+
+</body>
+</html>
